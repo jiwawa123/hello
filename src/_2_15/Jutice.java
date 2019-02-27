@@ -9,7 +9,14 @@ import java.util.Map;
 
 public class Jutice {
     public static void main(String[] args) {
-
+        System.out.println(brokenCalc(2,3));
+    }
+    public static int brokenCalc(int X, int Y) {
+        if(X>=Y) return X-Y;
+        if(Y%2==0)
+            return 1+brokenCalc(X,Y/2);
+        else
+            return 1+brokenCalc(X,Y+1);
     }
 
     public int findJudge(int N, int[][] trust) {
@@ -66,5 +73,13 @@ public class Jutice {
             tc++;
         }
         return re;
+    }
+
+    public boolean equationsPossible(String[] equations) {
+        int array[] = new int[26];
+        for (int i = 0; i < equations.length; i++) {
+            
+        }
+        return true;
     }
 }

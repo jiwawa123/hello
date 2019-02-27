@@ -559,5 +559,23 @@ public class TreeNode {
         }
         return count;
     }
+    //最大二叉树II
+    public TreeNode insertIntoMaxTree(TreeNode root, int val) {
+        //判断三种情况，
+        if(root==null){
+            return new TreeNode(val);
+        }
+        if(root.val<val){
+            TreeNode ro = new TreeNode(val);
+            ro.left = ro;
+            return ro;
+        }
+        if(root.left!=null){
+            root.left = insertIntoMaxTree(root.left, val);
+        }else{
+            root.right = insertIntoMaxTree(root.right, val);
+        }
+        return root;
 
+    }
 }
